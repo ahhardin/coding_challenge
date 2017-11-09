@@ -1,0 +1,132 @@
+#### Problem 1 ####
+print("PROBLEM 1")
+print("Durham is Awesome")
+
+print("")
+print("")
+
+
+#### Problem 2 ####
+print("PROBLEM 2")
+bands = ['Kiss', 'Aerosmith', 'ACDC', 'Led Zeppelin', 'Nickelback']
+
+for band in bands:
+        print("I love "+str(band))
+        
+        
+print("")
+print("")
+
+#### Problem 3 ####
+print("PROBLEM 3")
+
+for band in bands:
+    if band == "Nickelback":
+        print("I DON'T love "+str(band)+"!")
+    else:
+        print("I love "+str(band))
+
+        
+print("")
+print("")
+
+print("PROBLEM 3b")
+
+bands.append("One Direction")
+for band in bands:
+    if band == "Nickelback":
+        print("I DON'T love "+str(band)+"!")
+    elif band == "One Direction":
+        print(str(band)+" is honestly better than any of these")
+    else:
+        print("I love "+str(band))
+        
+print("")
+print("")
+
+#### Problme 4 ####
+print("PROBLEM 4")
+
+array1 = [34, 203, 16, 46, 34, 432, 342, 124, 33, 188, 12]
+
+print("for array = "+str(array1))
+print("the average is "+str(sum(array1)*1.0/len(array1)))
+
+print("")
+print("")
+
+#### Problem 5 ####
+print("PROBLEM 5")
+
+dict1 = {}
+array2 = ['a', 'b', 'c', 'd', 'c', 'b', 'b', 'c', 'a', 'e', 'b', 'e'];
+
+print("for array = ")
+print(array2)
+print("")
+
+array2.sort()
+for letter in array2:
+    dict1[letter] = array2.count(letter)
+
+letter = dict1.keys()
+frequency = dict1.values()
+
+max_letter = (letter[frequency.index(max(frequency))])
+min_letter = (letter[frequency.index(min(frequency))])
+
+print("The MOST frequent item in the array is "
+      +max_letter+", with "+str(max(frequency))+ " occurrence(s).")
+print("")
+print("The LEAST frequent item in the array is "
+      +min_letter+", with "+str(min(frequency))+ " occurrence(s).")
+
+print("")
+print("")
+
+#### Problem 6 ####
+print("PROBLEM 6")
+
+array3 = ['a', 'b', 'c', 'a', 'a', 'b', 'd'];
+array4 = ['a', 'b', 'b', 'a', 'e', 'c', 'c', 'g'];
+
+print("The overlap array of")
+print(str(array3)+" and")
+print(str(array4)+" is")
+
+dict2 ={}
+overlap_array = []
+
+for letter in array3:
+    if array3.count(letter) < array4.count(letter):
+        dict2[letter]=array3.count(letter)
+    else:
+        dict2[letter]=array4.count(letter)
+
+for key in dict2:
+    for num in range(dict2[key]):
+        overlap_array.append(key)
+        
+print(overlap_array)
+        
+    
+print("")
+print("")
+
+#### Problem 7 ####
+print("PROBLEM 7")
+
+def bills(cost):
+    hundreds = cost//100
+    twenties = (cost%100)//20
+    fives = (cost%100%20)//5
+    ones = (cost%100%20%5)
+    return hundreds, twenties, fives, ones
+
+cost = 4567
+
+print("If you wish to withdraw $"+str(cost))+", you will receive:"
+print(str(bills(cost)[0])+ " $100 bills")
+print(str(bills(cost)[1])+ " $20 bills")
+print(str(bills(cost)[2])+ " $5 bills")
+print(str(bills(cost)[3])+ " $1 bills")
